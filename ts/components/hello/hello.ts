@@ -5,7 +5,7 @@ class HelloCtrl {
 	public world: string;
 
 	constructor () {
-		this.world = 'World';
+		this.world = 'my friend';
 	}
 
 }

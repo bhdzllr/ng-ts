@@ -1,7 +1,7 @@
 /// <reference path='../../../typings/index.d.ts' />
 var HelloCtrl = (function () {
     function HelloCtrl() {
-        this.world = 'World';
+        this.world = 'my friend';
     }
     return HelloCtrl;
 }());
