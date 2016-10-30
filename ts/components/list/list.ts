@@ -4,20 +4,24 @@
 
 class ListCtrl {
 
+	static $inject = ['githubAPI'];
+
 	public data: IRecord[] = [];
 
-	constructor ( $http: angular.IHttpService ) {
-		let api = new GitHubAPI( $http );
-
+	constructor(
+		private api: GitHubAPI,
+		private filter: ListFilter
+	) {
 		// Type? Eigentlich promise.
-		api.get(100).then((response: any) => {
+		api.getData(100).then((response: any) => {
 			for (var i in response.data) {
 				this.data.push({
-					'id':      response.data[i].id,
-					'title':   response.data[i].title,
-					'state':   response.data[i].state,
-					'number':  response.data[i].number,
-					'created': response.data[i].created_at
+					'id':        response.data[i].id,
+					'title':     response.data[i].title,
+					'state':     response.data[i].state,
+					'number':    response.data[i].number,
+					'created':   response.data[i].created_at,
+					'url':       response.data[i].html_url
 				});
 			}
 		});

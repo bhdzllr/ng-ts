@@ -7,21 +7,27 @@ interface IRecord {
 	title: string,
 	state: string,
 	number: number,
-	created: string
+	created: string,
+	url: string
 }
 
 class GitHubAPI {
 
+	static $inject = ['$http'];
+
 	private $http: angular.IHttpService;
 	private url: string = 'https://api.github.com/repos/Microsoft/TypeScript/pulls';
 
-	constructor ($http: angular.IHttpService, url: string = null) {
+	constructor($http: angular.IHttpService) {
 		this.$http = $http;
-		if (url) this.url = url;
+	}
+
+	setUrl(url: string): void {
+		this.url = url;
 	}
 
 	// Type? Eigentlich promise.
-	get(length: number): any {
+	getData(length: number): any {
 		return this.$http.get(this.url + '?per_page=' + length);
 	}
 

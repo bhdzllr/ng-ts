@@ -1,9 +1,14 @@
-<p>Pull requests: {{$ctrl.data.length}}
+<p>Open Pull requests: {{$ctrl.data.length}}
+
+<label for="filter-search">Search:</label>
+<input type="text" name="filter-search" id="filter-search" ng-model="searchKeyword" />
+
+<input type="checkbox" name="filter-open" id="filter-open" ng-click="$ctrl.filterOpen()" />
 
 <ul>
-	<li ng-repeat="record in $ctrl.data">
-		<a href="{{record.html_url}}" title="Open pull request #{{record.number}} on GitHub">
-			{{record.title}} #{{record.number}} {{record.state}} {{record.created}}
+	<li ng-repeat="record in $ctrl.data | filter: searchKeyword">
+		<a href="{{record.url}}" title="Open pull request #{{record.number}} on GitHub">
+			{{record.title}} #{{record.number}} {{record.created}}
 		</a>
 	</li>
 </ul>
