@@ -1,5 +1,7 @@
 /// <reference path='../../../typings/index.d.ts' />
 
+'use strict';
+
 class HelloCtrl {
 
 	public world: string;

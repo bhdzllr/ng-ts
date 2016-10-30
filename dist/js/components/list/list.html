@@ -3,7 +3,7 @@
 <ul>
 	<li ng-repeat="record in $ctrl.data">
 		<a href="{{record.html_url}}" title="Open pull request #{{record.number}} on GitHub">
-			{{record.title}} #{{record.number}} {{record.state}} {{record.created_at}}
+			{{record.title}} #{{record.number}} {{record.state}} {{record.created}}
 		</a>
 	</li>
 </ul>

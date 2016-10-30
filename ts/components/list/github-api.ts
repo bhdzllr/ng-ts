@@ -1,5 +1,15 @@
 /// <reference path='../../../typings/index.d.ts' />
 
+'use strict';
+
+interface IRecord {
+	id: number,
+	title: string,
+	state: string,
+	number: number,
+	created: string
+}
+
 class GitHubAPI {
 
 	private $http: angular.IHttpService;
@@ -10,7 +20,8 @@ class GitHubAPI {
 		if (url) this.url = url;
 	}
 
-	get(length: number) {
+	// Type? Eigentlich promise.
+	get(length: number): any {
 		return this.$http.get(this.url + '?per_page=' + length);
 	}
 

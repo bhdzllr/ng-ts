@@ -1,14 +1,25 @@
 /// <reference path='../../../typings/index.d.ts' />
 
+'use strict';
+
 class ListCtrl {
 
-	public data;
+	public data: IRecord[] = [];
 
 	constructor ( $http: angular.IHttpService ) {
 		let api = new GitHubAPI( $http );
 
-		api.get(100).then((response) => {
-			this.data = response.data;
+		// Type? Eigentlich promise.
+		api.get(100).then((response: any) => {
+			for (var i in response.data) {
+				this.data.push({
+					'id':      response.data[i].id,
+					'title':   response.data[i].title,
+					'state':   response.data[i].state,
+					'number':  response.data[i].number,
+					'created': response.data[i].created_at
+				});
+			}
 		});
 	}
 
