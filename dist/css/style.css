@@ -137,6 +137,8 @@ input {
 }
 
 #filter-search {
+	box-sizing: border-box;
+
 	background-color: #D1D1D1;
 
 	transition: background 0.2s ease;
@@ -144,6 +146,17 @@ input {
 
 #filter-search:focus {
 	background-color: #FFFFFF;
+}
+
+@media only screen and (max-width: 400px) {
+	.requests__header h3,
+	.requests__filter {
+		float: none;
+	}
+
+	#filter-search {
+		width: 100%;
+	}
 }
 
 /** Request (Single Request) **/
