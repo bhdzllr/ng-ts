@@ -1,0 +1,185 @@
+/** Base **/
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+
+	color: #333333;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	line-height: 1.45em;
+}
+
+html {
+	background-color: #EFEFEF;
+}
+
+body {
+	width: auto;
+	max-width: 50em;
+	margin: 1em auto 2em;
+
+	background-color: #FFFFFF;
+}
+
+a,
+a:link,
+a:visited {
+	color: #337AB7;
+	text-decoration: none;
+}
+
+a:focus,
+a:hover,
+a:active {
+	color: #23527C;
+	text-decoration: underline;
+}
+
+p {
+	margin: 1em 0;
+}
+
+img {
+	width: auto;
+	max-width: 100% !important;
+	height: auto;
+	
+	border: none;
+}
+
+/** Site Header **/
+
+.site-header {
+	padding: 1em;
+
+	background-color: #152740;
+}
+
+.site-header h1 {
+	color: #FFFFFF;
+	font-weight: normal;
+}
+
+.site-header .tagline {
+	color: #FFA700;
+	font-style: italic;
+}
+
+/** Main **/
+
+main {
+	padding: 1em;
+}
+
+
+form p {
+	position: relative;
+
+	margin: 0;
+	padding: 0;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+
+	border: none;
+}
+
+legend {
+	display: none;
+}
+
+label {
+	position: absolute;
+	top: 0;
+	right: 0.5em;
+
+	color: #777777;
+	font-size: 0.75em;
+}
+
+input {
+	padding: 0.5em;
+
+	border: 1px solid #CCCCCC;
+
+	font-size: inherit;
+}
+
+/** Requests Container **/
+
+.requests {
+	border: 1px solid #CCCCCC;
+}
+
+.requests__header {
+	overflow: hidden;
+
+	padding: 0.5em;
+
+	background-color: #999999;
+
+	line-height: 2.5em;
+}
+
+.requests__header h3 {
+	float: left;
+
+	margin: 0;
+	padding: 0;
+}
+
+.requests__filter {
+	float: right;
+}
+
+#filter-search {
+	background-color: #D1D1D1;
+
+	transition: background 0.2s ease;
+}
+
+#filter-search:focus {
+	background-color: #FFFFFF;
+}
+
+/** Request (Single Request) **/
+
+.request {
+	padding: 0.5em;
+	border-top: 1px solid #CCCCCC;
+}
+
+.request:first-child {
+	border-top: none;
+}
+
+.request:hover {
+	background-color: #EEEEEE;
+}
+
+.request__title,
+.request__details {
+	margin: 0;
+	padding: 0;
+}
+
+.request__details {
+	color: #666666;
+	font-size: 0.75em;
+}
+
+/** Site Footer **/
+
+.site-footer {
+	margin: 1em auto;
+	padding: 0.5em;
+	border-top: 1px solid #CCCCCC;
+
+	color: #666666;
+	font-size: 0.9em;
+	text-align: center;
+}

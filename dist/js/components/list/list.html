@@ -1,14 +1,38 @@
-<p>Open Pull requests: {{$ctrl.data.length}}
+<article>
+	<header>
+		<h2>Pull requests</h2>
+	</header>
 
-<label for="filter-search">Search:</label>
-<input type="text" name="filter-search" id="filter-search" ng-model="searchKeyword" />
+	<div>
+		<section>
+			<p>There are {{$ctrl.data.length}} open pull requests for Microsoft / TypeScript.</p>
+		</section>
 
-<input type="checkbox" name="filter-open" id="filter-open" ng-click="$ctrl.filterOpen()" />
+		<section class="requests">
+			<header class="requests__header">
+				<h3>Pull requests</h3>
 
-<ul>
-	<li ng-repeat="record in $ctrl.data | filter: searchKeyword">
-		<a href="{{record.url}}" title="Open pull request #{{record.number}} on GitHub">
-			{{record.title}} #{{record.number}} {{record.created}}
-		</a>
-	</li>
-</ul>
+				<form id="form-filter" class="requests__filter">
+					<fieldset>
+						<legend>Search in pull reqeusts</legend>
+					
+						<p>
+							<label for="filter-search">Search</label>
+							<input type="text" name="filter-search" id="filter-search" placeholder="Keyword..." ng-model="searchKeyword" />
+						</p>
+					</fieldset>
+				</form>
+			</header>
+
+			<div class="request" ng-repeat="record in $ctrl.data | filter: searchKeyword">
+				<h4 class="request__title">
+					<a href="{{record.url}}" title="Open pull request #{{record.number}} on GitHub">
+						{{record.title}}
+					</a>
+				</h4>
+
+				<p class="request__details">#{{record.number}} from {{record.created}}</p>
+			</div>
+		</section>
+	</div>
+</article>
